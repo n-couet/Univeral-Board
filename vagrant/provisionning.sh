@@ -15,13 +15,7 @@ sudo mv composer.phar /usr/local/bin/composer
 sudo add-apt-repository ppa:chris-lea/node.js
 sudo apt-get update
 sudo apt-get install nodejs -y
-sudo npm install -g npm
-sudo npm install -g bower
-sudo npm install -g grunt-cli
 
-# sass
-sudo apt-get install ruby-full
-sudo gem install sass
 
 # MySQL
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password vagrant'

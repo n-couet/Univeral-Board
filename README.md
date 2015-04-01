@@ -1,2 +1,3 @@
 # Univeral-Board
-Simply create and use board system
+
+Open source project Universal-Board is about creating a simple (but not less powerful) administration panel.

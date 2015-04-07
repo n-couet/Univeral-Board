@@ -2,24 +2,17 @@
  * Created by nicolas.couet on 03/04/2015.
  */
 
-exports.ABaseEntity = function () {
-    exports.ABaseEntity.prototype.listen;
-    exports.ABaseEntity.prototype.act;
-
-    
-    exports.ABaseEntity.prototype.listAction = function(port) {
-        if (port == undefined)
-            port = 'default';
-        if (port in this.act)
-            return this.act[port];
-        return undefined;
-    }
-
-    exports.ABaseEntity.prototype.listAllAction = function(port) {
-        if (port == undefined)
-            port = 'default';
-        if (port in this.act)
-            return this.act[port];
-        return undefined;
-    }
+var ABaseEntity = function (name) {
+    this.watch('name', ABaseEntity.prototype.changename);
+    this.name = name;
 };
+
+ABaseEntity.prototype.move = function(meters) {
+    console.log(this.name+" moved "+meters+"m.");
+};
+
+ABaseEntity.prototype.changename = function(id, oldval, newval) {
+    console.log('name change ' + ' id ' + id + ' old ' + oldval + ' newval ' + newval);
+};
+
+module.exports = ABaseEntity;

@@ -2,13 +2,7 @@
  * Created by nicolas.couet on 03/04/2015.
  */
 
-truc = require('./UniPort.js');
-a = require('./ABaseEntity.js')
+var UniPort = require('./UniPort.js');
 
-var b = a.ABaseEntity();
+var b = new UniPort("toto");
 
-b.listAction();
-
-var port = truc.UniPort();
-
-port.listAction();

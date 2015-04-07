@@ -2,8 +2,17 @@
  * Created by nicolas.couet on 03/04/2015.
  */
 
-toto = require('./ABaseEntity.js');
+var ABaseEntity = require('./ABaseEntity.js');
 
-exports.UniPort = function () {
-    this.prototype = Object.create(toto.ABaseEntity.prototype);
-}
+var Uniport = function () {
+    ABaseEntity.apply(this, Array.prototype.slice.call(arguments));
+};
+
+Uniport.prototype = new ABaseEntity();
+
+Uniport.prototype.move = function() {
+    console.log("Slithering...");
+    ABaseEntity.prototype.move.call(this, 5);
+};
+
+module.exports = Uniport;
